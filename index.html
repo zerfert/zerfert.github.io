@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zerfert — Desarrollador de Aplicaciones Móviles</title>
-    <meta name="description" content="Portafolio de Zerfert (Rafael) — Desarrollador de aplicaciones móviles. Descubre LunaQR y más.">
+    <title>Zerfert — Desarrollador de Software & Machine Learning</title>
+    <meta name="description" content="Portafolio de Zerfert (Rafael) — Desarrollador de software, aplicaciones móviles y Machine Learning.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -199,6 +199,58 @@
             height: 20px;
         }
 
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            font-weight: 600;
+            font-size: .9rem;
+            padding: 12px 28px;
+            border-radius: 10px;
+            transition: background .2s ease, transform .2s ease, border-color .2s ease;
+        }
+
+        .btn-github:hover {
+            background: var(--surface-hover);
+            border-color: var(--accent-light);
+            transform: scale(1.03);
+        }
+
+        .btn-github svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ── Skills Tags ── */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            font-size: .75rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: .02em;
+        }
+
+        /* ── Cards grid ── */
+        .cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         /* ── Footer ── */
         footer {
             position: relative;
@@ -218,6 +270,7 @@
             header p.subtitle { font-size: 1rem; }
             .card { padding: 24px; }
             .card-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .card-actions { flex-direction: column; }
         }
     </style>
 </head>
@@ -231,40 +284,72 @@
         <div class="container">
             <div class="avatar">Z</div>
             <h1><span>Zerfert</span></h1>
-            <p class="subtitle">Desarrollador de Aplicaciones Móviles</p>
+            <p class="subtitle">Desarrollador de Software & Machine Learning</p>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Android</span>
+                <span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Data Science</span>
+                <span class="skill-tag">Apps Móviles</span>
+            </div>
         </div>
     </header>
 
     <!-- ══════════ PORTAFOLIO ══════════ -->
     <section>
         <div class="container">
-            <p class="section-title">📱 Portafolio</p>
+            <p class="section-title">� Proyectos</p>
 
-            <!-- App Card — LunaQR -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="app-icon">📷</div>
-                    <div>
-                        <h3>LunaQR</h3>
-                        <span class="badge">Escáner &amp; Creador de QR</span>
+            <div class="cards-grid">
+
+                <!-- App Card — LunaQR -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="app-icon">📷</div>
+                        <div>
+                            <h3>LunaQR</h3>
+                            <span class="badge">Escáner &amp; Creador de QR</span>
+                        </div>
                     </div>
+                    <p>
+                        Aplicación rápida y segura para escanear y generar códigos QR. 
+                        Diseñada con una interfaz intuitiva para que puedas crear y leer 
+                        códigos en segundos, sin complicaciones.
+                    </p>
+                    <a href="https://www.amazon.com/dp/B0GPYDJH92" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.08 15.59c-1.6 1.18-3.92 1.81-5.92 1.81-2.8 0-5.33-1.04-7.24-2.76-.15-.14-.02-.32.16-.22 2.06 1.2 4.6 1.92 7.23 1.92 1.77 0 3.72-.37 5.51-1.13.27-.12.5.18.26.38z"/>
+                            <path d="M14.82 14.72c-.2-.26-1.35-.12-1.87-.06-.16.02-.18-.12-.04-.22.91-.64 2.41-.46 2.59-.24.17.22-.05 1.73-.91 2.46-.13.11-.26.05-.2-.1.19-.49.63-1.58.43-1.84z"/>
+                            <path d="M13 10.27V9.2c0-.16.12-.27.26-.27h4.64c.15 0 .27.11.27.26v.92c0 .15-.13.34-.35.65l-2.41 3.44c.9-.02 1.84.11 2.65.56.18.1.23.26.24.4v1.14c0 .16-.17.33-.34.24-1.42-.74-3.3-.82-4.87.02-.16.09-.33-.08-.33-.24v-1.08c0-.17 0-.47.18-.73l2.79-4c.19-.27.5-.71.5-.71h-2.96c-.15 0-.27-.11-.27-.27zM5.41 17h-1.5c-.14-.01-.25-.12-.26-.25V5.26c0-.15.12-.26.27-.26h1.4c.14.01.26.12.27.25v1.26h.03c.36-1.04 1.03-1.52 1.94-1.52.92 0 1.5.48 1.91 1.52.36-1.04 1.17-1.52 2.04-1.52.62 0 1.3.25 1.71.83.47.64.37 1.57.37 2.39v5.05c0 .15-.12.26-.27.26h-1.5c-.14-.01-.25-.12-.25-.26V8.68c0-.32.03-1.12-.04-1.42-.11-.5-.44-.65-.87-.65-.36 0-.73.24-.88.62-.16.39-.14 1.03-.14 1.45v4.58c0 .15-.12.26-.27.26h-1.5c-.14-.01-.25-.12-.25-.26V8.68c0-.85.14-2.1-.91-2.1-1.07 0-1.03 1.22-1.03 2.1v4.58c0 .15-.12.26-.27.26z"/>
+                        </svg>
+                        Descargar en Amazon Appstore
+                    </a>
                 </div>
-                <p>
-                    Aplicación rápida y segura para escanear y generar códigos QR. 
-                    Diseñada con una interfaz intuitiva para que puedas crear y leer 
-                    códigos en segundos, sin complicaciones.
-                </p>
-                <a href="https://www.amazon.com/dp/B0GPYDJH92" target="_blank" rel="noopener noreferrer" class="btn-amazon">
-                    <!-- Amazon icon -->
-                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.08 15.59c-1.6 1.18-3.92 1.81-5.92 1.81-2.8 0-5.33-1.04-7.24-2.76-.15-.14-.02-.32.16-.22 2.06 1.2 4.6 1.92 7.23 1.92 1.77 0 3.72-.37 5.51-1.13.27-.12.5.18.26.38z"/>
-                        <path d="M14.82 14.72c-.2-.26-1.35-.12-1.87-.06-.16.02-.18-.12-.04-.22.91-.64 2.41-.46 2.59-.24.17.22-.05 1.73-.91 2.46-.13.11-.26.05-.2-.1.19-.49.63-1.58.43-1.84z"/>
-                        <path d="M13 10.27V9.2c0-.16.12-.27.26-.27h4.64c.15 0 .27.11.27.26v.92c0 .15-.13.34-.35.65l-2.41 3.44c.9-.02 1.84.11 2.65.56.18.1.23.26.24.4v1.14c0 .16-.17.33-.34.24-1.42-.74-3.3-.82-4.87.02-.16.09-.33-.08-.33-.24v-1.08c0-.17 0-.47.18-.73l2.79-4c.19-.27.5-.71.5-.71h-2.96c-.15 0-.27-.11-.27-.27zM5.41 17h-1.5c-.14-.01-.25-.12-.26-.25V5.26c0-.15.12-.26.27-.26h1.4c.14.01.26.12.27.25v1.26h.03c.36-1.04 1.03-1.52 1.94-1.52.92 0 1.5.48 1.91 1.52.36-1.04 1.17-1.52 2.04-1.52.62 0 1.3.25 1.71.83.47.64.37 1.57.37 2.39v5.05c0 .15-.12.26-.27.26h-1.5c-.14-.01-.25-.12-.25-.26V8.68c0-.32.03-1.12-.04-1.42-.11-.5-.44-.65-.87-.65-.36 0-.73.24-.88.62-.16.39-.14 1.03-.14 1.45v4.58c0 .15-.12.26-.27.26h-1.5c-.14-.01-.25-.12-.25-.26V8.68c0-.85.14-2.1-.91-2.1-1.07 0-1.03 1.22-1.03 2.1v4.58c0 .15-.12.26-.27.26z"/>
-                    </svg>
-                    Descargar en Amazon Appstore
-                </a>
-            </div>
 
+                <!-- Card — Repositorios GitHub -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #1f6feb, #238636);">🧠</div>
+                        <div>
+                            <h3>Proyectos Open Source</h3>
+                            <span class="badge">GitHub Repositories</span>
+                        </div>
+                    </div>
+                    <p>
+                        Explora mis proyectos públicos en GitHub: experimentos de Machine Learning, 
+                        herramientas, scripts y más. Todo el código abierto para la comunidad.
+                    </p>
+                    <a href="https://github.com/zerfert?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                        Ver repositorios en GitHub
+                    </a>
+                </div>
+
+            </div>
         </div>
     </section>
 
