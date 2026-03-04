@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerfert — Desarrollador de Aplicaciones Móviles</title>
+    <meta name="description" content="Portafolio de Zerfert (Rafael) — Desarrollador de aplicaciones móviles. Descubre LunaQR y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & Base ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0e0e10;
+            --surface: #18181b;
+            --surface-hover: #1f1f23;
+            --border: #27272a;
+            --text: #fafafa;
+            --text-muted: #a1a1aa;
+            --accent: #6d28d9;
+            --accent-light: #8b5cf6;
+            --amazon-orange: #ff9900;
+            --amazon-hover: #ffad33;
+            --radius: 16px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ── Glow background effect ── */
+        .glow {
+            position: fixed;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(109,40,217,.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Layout ── */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ── Header / Hero ── */
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 100px 0 60px;
+        }
+
+        .avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 auto 24px;
+            box-shadow: 0 0 40px rgba(109,40,217,.35);
+            user-select: none;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        header h1 span {
+            color: var(--accent-light);
+        }
+
+        header p.subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ── Section ── */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 20px 0 60px;
+        }
+
+        .section-title {
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: var(--accent-light);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        /* ── App Card ── */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,.4);
+            border-color: var(--accent);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #6d28d9, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        .card-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-header .badge {
+            display: inline-block;
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            background: rgba(109,40,217,.2);
+            color: var(--accent-light);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .btn-amazon {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--amazon-orange);
+            color: #0e0e10;
+            font-weight: 600;
+            font-size: .9rem;
+            padding: 12px 28px;
+            border-radius: 10px;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .btn-amazon:hover {
+            background: var(--amazon-hover);
+            transform: scale(1.03);
+        }
+
+        .btn-amazon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ── Footer ── */
+        footer {
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: .8rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            header { padding: 60px 0 40px; }
+            header h1 { font-size: 1.6rem; }
+            header p.subtitle { font-size: 1rem; }
+            .card { padding: 24px; }
+            .card-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Efecto glow decorativo -->
+    <div class="glow"></div>
+
+    <!-- ══════════ HEADER ══════════ -->
+    <header>
+        <div class="container">
+            <div class="avatar">Z</div>
+            <h1><span>Zerfert</span></h1>
+            <p class="subtitle">Desarrollador de Aplicaciones Móviles</p>
+        </div>
+    </header>
+
+    <!-- ══════════ PORTAFOLIO ══════════ -->
+    <section>
+        <div class="container">
+            <p class="section-title">📱 Portafolio</p>
+
+            <!-- App Card — LunaQR -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon">📷</div>
+                    <div>
+                        <h3>LunaQR</h3>
+                        <span class="badge">Escáner &amp; Creador de QR</span>
+                    </div>
+                </div>
+                <p>
+                    Aplicación rápida y segura para escanear y generar códigos QR. 
+                    Diseñada con una interfaz intuitiva para que puedas crear y leer 
+                    códigos en segundos, sin complicaciones.
+                </p>
+                <a href="https://www.amazon.com/dp/B0GPYDJH92" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                    <!-- Amazon icon -->
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.08 15.59c-1.6 1.18-3.92 1.81-5.92 1.81-2.8 0-5.33-1.04-7.24-2.76-.15-.14-.02-.32.16-.22 2.06 1.2 4.6 1.92 7.23 1.92 1.77 0 3.72-.37 5.51-1.13.27-.12.5.18.26.38z"/>
+                        <path d="M14.82 14.72c-.2-.26-1.35-.12-1.87-.06-.16.02-.18-.12-.04-.22.91-.64 2.41-.46 2.59-.24.17.22-.05 1.73-.91 2.46-.13.11-.26.05-.2-.1.19-.49.63-1.58.43-1.84z"/>
+                        <path d="M13 10.27V9.2c0-.16.12-.27.26-.27h4.64c.15 0 .27.11.27.26v.92c0 .15-.13.34-.35.65l-2.41 3.44c.9-.02 1.84.11 2.65.56.18.1.23.26.24.4v1.14c0 .16-.17.33-.34.24-1.42-.74-3.3-.82-4.87.02-.16.09-.33-.08-.33-.24v-1.08c0-.17 0-.47.18-.73l2.79-4c.19-.27.5-.71.5-.71h-2.96c-.15 0-.27-.11-.27-.27zM5.41 17h-1.5c-.14-.01-.25-.12-.26-.25V5.26c0-.15.12-.26.27-.26h1.4c.14.01.26.12.27.25v1.26h.03c.36-1.04 1.03-1.52 1.94-1.52.92 0 1.5.48 1.91 1.52.36-1.04 1.17-1.52 2.04-1.52.62 0 1.3.25 1.71.83.47.64.37 1.57.37 2.39v5.05c0 .15-.12.26-.27.26h-1.5c-.14-.01-.25-.12-.25-.26V8.68c0-.32.03-1.12-.04-1.42-.11-.5-.44-.65-.87-.65-.36 0-.73.24-.88.62-.16.39-.14 1.03-.14 1.45v4.58c0 .15-.12.26-.27.26h-1.5c-.14-.01-.25-.12-.25-.26V8.68c0-.85.14-2.1-.91-2.1-1.07 0-1.03 1.22-1.03 2.1v4.58c0 .15-.12.26-.27.26z"/>
+                    </svg>
+                    Descargar en Amazon Appstore
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Zerfert (Rafael). Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
